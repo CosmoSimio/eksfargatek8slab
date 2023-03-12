@@ -1,0 +1,24 @@
+accessID: ACCESS_ID
+accessKey: ACCESS_KEY
+account: lmaccount
+debug: false
+enableRBAC: true
+etcdDiscoveryToken: ''
+imageRepository: logicmonitor/collectorset-controller
+imageTag: v3
+imagePullPolicy: Always
+proxyURL: ''
+proxyUser: ''
+proxyPass: ''
+nodeSelector: {}
+affinity: {}
+priorityClassName: ''
+tolerations: []
+labels: {}
+annotations: {}
+ignore_ssl: false
+podSecurityContext: {}
+securityContext:
+  capabilities:
+    add: []
+    drop: []

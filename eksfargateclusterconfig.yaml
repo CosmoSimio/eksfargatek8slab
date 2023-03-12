@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: yourname-eks-fargate-k8s
+  region: us-east-2
+
+availabilityZones: ["us-east-2a", "us-east-2b"]
+
+privateCluster:
+  enabled: false
+
+fargateProfiles:
+  - name: yourname-fargate-profile
+    selectors:
+      - namespace: "*"
