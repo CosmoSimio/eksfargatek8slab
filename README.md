@@ -17,7 +17,8 @@ Run the following command to remove the '`eks.amazonaws.com/compute-type : ec2`'
 kubectl patch deployment coredns -n kube-system --type json -p='[{"op": "remove", "path": "/spec/template/metadata/annotations/eks.amazonaws.com~1compute-type"}]'
 ```
 
-## 3. Delete and re-create any existing pods so that they're scheduled on Fargate. For example, the following command triggers a rollout of the coredns deployment:
+## 3. Delete and re-create any existing CoreDNS pods so that they are scheduled on Fargate. 
+The following command triggers a rollout of the CoreDNS deployment:
 ```
 kubectl rollout restart -n kube-system deployment coredns
 ```
