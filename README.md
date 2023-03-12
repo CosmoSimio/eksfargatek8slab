@@ -28,7 +28,7 @@ kubectl rollout restart -n kube-system deployment coredns
 helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
 
-## 5. Create logicmonitor namespace
+## 5. Create `logicmonitor` namespace
 ```
 kubectl create ns logicmonitor
 ```
