@@ -6,6 +6,7 @@
 - Must have `eksctl` installed
 - Must have `kubectl` installed
 - Must have `helm` installed
+- You will also need you LogicMonitor `account` name and an API `Access ID` and `Access Key`
 
 # Create the AWS EKS Fargate kubernetes cluster
 
