@@ -33,50 +33,50 @@ helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 kubectl create ns logicmonitor
 ```
 
-## 6. Install collectorset-controller
+## 6. Install `collectorset-controller`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
 ```
 
-## 7. Install argus
+## 7. Install `argus`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f argus-configuration.yaml argus logicmonitor/argus
 ```
 
-## 8. View the logs for the collectorset-controller
+## 8. You can view the logs for the `collectorset-controller`
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=collectorset-controller -o name) -c collectorset-controller -n logicmonitor
 ```
 
-## 9. View the logs for Argus
+## 9. You can view the logs for `argus`
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=argus -o name) -c argus -n logicmonitor
 ```
 
 # Migrating to unified LM Container helm chart
 
-## 1. Install LMC helm plugin
+## 1. Install `LMC` helm plugin
 ```
 helm plugin install https://github.com/logicmonitor/lmc
 ```
 
-## 2. Migrate existing argus and collectorset-controller helm configs
+## 2. Migrate existing `argus` and `collectorset-controller` helm configs
 ```
 helm lmc config migrate -n logicmonitor
 ```
 - This will create and migrate the existing configs in a new file called `lm-container-configuration.yaml` in your `logicmonitor` namespace.
 
-## 3. Delete old argus
+## 3. Delete old `argus`
 ```
 helm delete argus -n logicmonitor
 ```
 
-## 4. Delete old collectorset-controller
+## 4. Delete old `collectorset-controller`
 ```
 helm delete collectorset-controller -n logicmonitor
 ```
 
-## 5. Delete old collectorset-controller Custom Resource Definition (CRD)
+## 5. Delete old `collectorset-controller` Custom Resource Definition (CRD)
 ```
 kubectl delete crd collectorsets.logicmonitor.com
 ```
