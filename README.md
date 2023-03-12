@@ -1,10 +1,13 @@
-# Requirements
+# Getting Started
+
+## Requirements
 - Must have `AWS CLI` installed
 - Must have `AWS CLI` credentials and run `aws configure`
 - Must have `eksctl` installed
 - Must have `kubectl` installed
 - Must have `helm` installed
-# Getting Started
+
+# Create the AWS EKS Fargate kubernetes cluster
 
 ## 1. Launch the cluster config file
 ```
@@ -22,33 +25,34 @@ The following command triggers a rollout of the CoreDNS deployment:
 ```
 kubectl rollout restart -n kube-system deployment coredns
 ```
+# Install LogicMonitor Argus and Collectorset Controller
 
-## 4. Import the LogicMonitor helm repo
+## 1. Import the LogicMonitor helm repo
 ```
 helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
 
-## 5. Create `logicmonitor` namespace
+## 2. Create `logicmonitor` namespace
 ```
 kubectl create ns logicmonitor
 ```
 
-## 6. Install `collectorset-controller`
+## 3. Install `collectorset-controller`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
 ```
 
-## 7. Install `argus`
+## 4. Install `argus`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f argus-configuration.yaml argus logicmonitor/argus
 ```
 
-## 8. You can view the logs for the `collectorset-controller`
+## (Optional) You can view the logs for the `collectorset-controller`
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=collectorset-controller -o name) -c collectorset-controller -n logicmonitor
 ```
 
-## 9. You can view the logs for `argus`
+## (Optional) You can view the logs for `argus`
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=argus -o name) -c argus -n logicmonitor
 ```
@@ -100,5 +104,5 @@ helm repo update
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" --create-namespace -f ./lm-container-configuration.yaml lm-container --version "3" logicmonitor/lm-container
 ```
-- Using `--version "3"` as this is the latest LM Container helm chart version as of the writing of this README.
+- Above command is using LM Container chart `--version "3"` as this is the latest LM Container helm chart version as of the writing of this `README`.
 - Check https://github.com/logicmonitor/helm-charts/tree/main/charts/lm-container for latest version.
