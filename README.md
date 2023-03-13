@@ -34,12 +34,12 @@ kubectl rollout restart -n kube-system deployment coredns
 helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
 
-## 2. Create `logicmonitor` namespace
+## 2. Create a `logicmonitor` namespace
 ```
 kubectl create ns logicmonitor
 ```
 
-## 3. Install `collectorset-controller`
+## 3. Install the `collectorset-controller`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
 ```
