@@ -2,7 +2,7 @@
 This lab will create a serverless (EC2-less) AWS EKS Kubernetes cluster on Fargate. You will also install the Logicmonitor monitoring applications to collect cluster metrics. You will also migrate to the unified `LM Container` helm chart for monitoring.
 
 ## Requirements
-- Must have `AWS CLI` installed <br>
+- Must have the `AWS CLI` installed <br>
 -- See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - Must have `AWS CLI` credentials and run `aws configure` <br>
 -- See https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config
@@ -14,8 +14,9 @@ This lab will create a serverless (EC2-less) AWS EKS Kubernetes cluster on Farga
 -- See https://docs.aws.amazon.com/eks/latest/userguide/helm.html
 - You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key` <br>
 -- See https://www.logicmonitor.com/support/settings/users-and-roles/api-tokens/#h-creating-lmv1-tokens
-- You should also clone this Github repo to a local working directory and as long as are working within your local repo's directory, you can run all of the next commands in order <br>
--- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli
+- You should also clone this Github repo to a local working directory <br>
+-- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli <br>
+-- As long as are working within your local repo's directory, you can run all of the commands in this `README` in order.
 
 # Create the AWS EKS Fargate Kubernetes cluster
 
