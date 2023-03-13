@@ -6,10 +6,20 @@ You can either manually update the `collectorset-controller-configuration.yaml` 
 ## Python Method
 The `helm-chart-cred-insert.py` script uses `ruamel.yaml` to load the input YAML files, update the necessary fields, and then write the updated files back to disk using the `ruamel.yaml.dump` method with the `ruamel.yaml.RoundTripDumper` class. The `RoundTripDumper` class preserves the order of keys in a mapping, so the output YAML files will have the same key order as the input files.
 
-You can install the `ruamel.yaml` module using `pip`
+Depending on your system, you might need to initiate a Python virtual environment by running command:
+```
+python3 -m venv myenv
+```
+The above command will create a new directory called `myenv` in the current directory, which will contain the virtual environment. <br>
+Then, you should activate the Python virtual environment using command:
+```
+myenv\Scripts\activate.bat
+```
+You can then install the `ruamel.yaml` module using `pip`
 ```
 pip install ruamel.yaml
 ```
+
 ## Bash script method for Linux/macOS
 The `helm-chart-cred-insert.sh` script uses the `yq` command-line tool to update the YAML files based on user input. The `yq` tool is a YAML processor that allows you to read, edit, and write YAML files from the command line.
 
