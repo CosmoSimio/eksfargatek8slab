@@ -1,3 +1,5 @@
+# To use this python script, you must ensure that the ruamel.yaml module is installed.
+# You can use command 'pip install ruamel.yaml' to install
 import ruamel.yaml
 
 # Define the input parameters
