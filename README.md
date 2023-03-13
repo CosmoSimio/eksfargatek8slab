@@ -23,7 +23,7 @@ kubectl patch deployment coredns -n kube-system --type json -p='[{"op": "remove"
 ```
 
 ## 3. Delete and re-create any existing `CoreDNS` pods so that they are scheduled on Fargate. 
-The following command triggers a rollout of the CoreDNS deployment:
+The following command triggers a rollout of the `CoreDNS` deployment:
 ```
 kubectl rollout restart -n kube-system deployment coredns
 ```
