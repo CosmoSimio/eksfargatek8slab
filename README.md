@@ -1,4 +1,5 @@
 # Getting Started
+This lab will create a serverless (EC2-less) AWS EKS Kubernetes cluster on Fargate. You will also install the Logicmonitor monitoring applications to collect cluster metrics. You will also migrate to the unified `LM Container` helm chart for monitoring.
 
 ## Requirements
 - Must have `AWS CLI` installed <br>
