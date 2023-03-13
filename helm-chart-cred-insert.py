@@ -1,4 +1,4 @@
-import yaml
+import ruamel.yaml
 
 # Define the input parameters
 access_id = input("Enter Access ID: ")
@@ -7,20 +7,20 @@ account = input("Enter Account: ")
 
 # Update the argus values file
 with open("argus-configuration.yaml", "r") as f:
-    values = yaml.safe_load(f)
+    values = ruamel.yaml.safe_load(f)
     values["accessID"] = access_id
     values["accessKey"] = access_key
     values["account"] = account
 
-with open("argus/values.yaml", "w") as f:
-    yaml.dump(values, f)
+with open("argus-configuration.yaml", "w") as f:
+    ruamel.yaml.dump(values, f, Dumper=ruamel.yaml.RoundTripDumper)
 
 # Update the collectorset-controller values file
 with open("collectorset-controller-configuration.yaml", "r") as f:
-    values = yaml.safe_load(f)
+    values = ruamel.yaml.safe_load(f)
     values["accessID"] = access_id
     values["accessKey"] = access_key
     values["account"] = account
 
-with open("collectorset-controller/values.yaml", "w") as f:
-    yaml.dump(values, f)
+with open("collectorset-controller-configuration.yaml", "w") as f:
+    ruamel.yaml.dump(values, f, Dumper=ruamel.yaml.RoundTripDumper)
