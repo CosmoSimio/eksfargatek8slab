@@ -76,32 +76,32 @@ helm get values collectorset-controller -n logicmonitor > collectorset-controlle
 helm get values argus -n logicmonitor > argus-configuration.yaml.bkp
 ```
 
-## 4. Migrate existing `argus` and `collectorset-controller` helm configs
+## 4. Migrate the existing `argus` and `collectorset-controller` helm configs
 ```
 helm lmc config migrate -n logicmonitor
 ```
-- This will create and migrate the existing configs in a new file called `lm-container-configuration.yaml` in your `logicmonitor` namespace.
+- This will create and migrate your existing configs in a new file called `lm-container-configuration.yaml` in your `logicmonitor` namespace.
 
-## 3. Delete old `argus`
+## 3. Delete the old `argus`
 ```
 helm delete argus -n logicmonitor
 ```
 
-## 4. Delete old `collectorset-controller`
+## 4. Delete the old `collectorset-controller`
 ```
 helm delete collectorset-controller -n logicmonitor
 ```
 
-## 5. Delete old `collectorset-controller` `Custom Resource Definition (CRD)`
+## 5. Delete the old `collectorset-controller` `Custom Resource Definition (CRD)`
 ```
 kubectl delete crd collectorsets.logicmonitor.com
 ```
 
-## 6. Delete client-cached `ConfigMaps`
+## 6. Delete the client-cached `ConfigMaps`
 ```
 kubectl delete configmaps -l argus=cache
 ```
-# Installing unified `LM Container` helm charts
+# Installing the unified `LM Container` helm charts
 
 ## 1. Import the `LM Container` helm chart repository
 ```
