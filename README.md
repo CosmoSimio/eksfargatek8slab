@@ -47,7 +47,7 @@ kubectl create ns logicmonitor
 ```
 helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
-> -- <i><b>Note</b>: Before proceeding with steps 3 and 4, you must ensure that you have updated the `collector-controller-configuration.yaml` and `argus-configuration.yaml` with <u>your own</u> LogicMonitor API credentials.</i>
+> <i><b>Note</b>: Before proceeding with steps 3 and 4, you must ensure that you have updated the `collector-controller-configuration.yaml` and `argus-configuration.yaml` with <u>your own</u> LogicMonitor API credentials.</i>
 ## 3. Install the `collectorset-controller`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
