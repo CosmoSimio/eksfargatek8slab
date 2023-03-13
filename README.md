@@ -69,7 +69,7 @@ kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=collectorset-
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=argus -o name) -c argus -n logicmonitor
 ```
-# Migrating to unified `LM Container` helm chart
+# Migrating to the unified `LM Container` helm chart
 
 ### 1. Install the `lmc` helm plugin
 ```
