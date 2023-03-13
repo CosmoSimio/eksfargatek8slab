@@ -4,8 +4,7 @@ You will  need your LogicMonitor `account` name and an API `Access ID` and `Acce
 You can either manually update the `collectorset-controller-configuration.yaml` and the `argus-configuration.yaml`, or you can use either of the following three scripts depending on the command line you are using.
 
 ## Python Method
-The `helm-chart-cred-insert.py` script uses `ruamel.yaml` to load the input YAML files, update the necessary fields, and then write the updated files back to disk using the `ruamel.yaml.dump` method with the <br>
-`ruamel.yaml.RoundTripDumper` class. The `RoundTripDumper` class preserves the order of keys in a mapping, so the output YAML files will have the same key order as the input files.
+The `helm-chart-cred-insert.py` script uses `ruamel.yaml` to load the input YAML files, update the necessary fields, and then write the updated files back to disk using the `ruamel.yaml.dump` method with the `ruamel.yaml.RoundTripDumper` class. The `RoundTripDumper` class preserves the order of keys in a mapping, so the output YAML files will have the same key order as the input files.
 
 You can install the `ruamel.yaml` module using `pip`
 ```
