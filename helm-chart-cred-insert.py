@@ -6,7 +6,7 @@ access_key = input("Enter Access Key: ")
 account = input("Enter Account: ")
 
 # Update the argus values file
-with open("argus/values.yaml", "r") as f:
+with open("argus-configuration.yaml", "r") as f:
     values = yaml.safe_load(f)
     values["accessID"] = access_id
     values["accessKey"] = access_key
@@ -16,7 +16,7 @@ with open("argus/values.yaml", "w") as f:
     yaml.dump(values, f)
 
 # Update the collectorset-controller values file
-with open("collectorset-controller/values.yaml", "r") as f:
+with open("collectorset-controller-configuration.yaml", "r") as f:
     values = yaml.safe_load(f)
     values["accessID"] = access_id
     values["accessKey"] = access_key
