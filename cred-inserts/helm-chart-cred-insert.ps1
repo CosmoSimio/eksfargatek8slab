@@ -14,15 +14,15 @@ $access_key = Read-Host "Enter Access Key"
 $account = Read-Host "Enter Account"
 
 # Update the argus values file
-$values = Get-Content -Path "argus-configuration.yaml" -Raw | ConvertFrom-Yaml
+$values = Get-Content -Path "../argus-configuration.yaml" -Raw | ConvertFrom-Yaml
 $values.accessID = $access_id
 $values.accessKey = $access_key
 $values.account = $account
-Set-Content -Path "argus-configuration.yaml" -Value ($values | ConvertTo-Yaml -Depth 100)
+Set-Content -Path "../argus-configuration.yaml" -Value ($values | ConvertTo-Yaml -Depth 100)
 
 # Update the collectorset-controller values file
-$values = Get-Content -Path "collectorset-controller-configuration.yaml" -Raw | ConvertFrom-Yaml
+$values = Get-Content -Path "../collectorset-controller-configuration.yaml" -Raw | ConvertFrom-Yaml
 $values.accessID = $access_id
 $values.accessKey = $access_key
 $values.account = $account
-Set-Content -Path "collectorset-controller-configuration.yaml" -Value ($values | ConvertTo-Yaml -Depth 100)
+Set-Content -Path "../collectorset-controller-configuration.yaml" -Value ($values | ConvertTo-Yaml -Depth 100)

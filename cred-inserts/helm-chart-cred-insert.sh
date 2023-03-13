@@ -11,9 +11,9 @@ read -p "Enter Access Key: " access_key
 read -p "Enter Account: " account
 
 # Update the argus values file
-yq -Y --arg access_id "$access_id" --arg access_key "$access_key" --arg account "$account" '.accessID = $access_id | .accessKey = $access_key | .account = $account' argus-configuration.yaml | sed 's/^/  /' > argus-configuration.yaml.new
-mv argus-configuration.yaml.new argus-configuration.yaml
+yq -Y --arg access_id "$access_id" --arg access_key "$access_key" --arg account "$account" '.accessID = $access_id | .accessKey = $access_key | .account = $account' ../argus-configuration.yaml | sed 's/^/  /' > ../argus-configuration.yaml.new
+mv ../argus-configuration.yaml.new ../argus-configuration.yaml
 
 # Update the collectorset-controller values file
-yq -Y --arg access_id "$access_id" --arg access_key "$access_key" --arg account "$account" '.accessID = $access_id | .accessKey = $access_key | .account = $account' collectorset-controller-configuration.yaml | sed 's/^/  /' > collectorset-controller-configuration.yaml.new
-mv collectorset-controller-configuration.yaml.new collectorset-controller-configuration.yaml
+yq -Y --arg access_id "$access_id" --arg access_key "$access_key" --arg account "$account" '.accessID = $access_id | .accessKey = $access_key | .account = $account' ../collectorset-controller-configuration.yaml | sed 's/^/  /' > ../collectorset-controller-configuration.yaml.new
+mv ../collectorset-controller-configuration.yaml.new ../collectorset-controller-configuration.yaml
