@@ -15,7 +15,7 @@ The `helm-chart-cred-insert.sh` script uses the `yq` command-line tool to update
 
 The script prompts the user for the `access ID`, `access key`, and `account` information using the read command, and then uses `yq` to update the appropriate fields in the YAML files. The `sed` command is then used to add indentation to the output YAML files, since `yq` does not preserve indentation by default.
 
-Finally, the script uses the `m`v command to overwrite the original YAML files with the updated versions.
+Finally, the script uses the `mv` command to overwrite the original YAML files with the updated versions.
 
 Note that you will need to have `yq` installed on your system in order to use this script. You can install `yq` using `pip` by running:
 ```
