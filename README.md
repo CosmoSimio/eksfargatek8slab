@@ -9,7 +9,7 @@
 - You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key`
 - You should also import this Github repo and as long as you work within your local repo's directory, you can run all of the next commands in order.
 
-# Create the AWS EKS Fargate kubernetes cluster
+# Create the AWS EKS Fargate Kubernetes cluster
 
 ## 1. Launch the cluster config file
 ```
