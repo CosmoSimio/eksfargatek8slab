@@ -1,20 +1,20 @@
 # Getting Started
 
 ## Requirements
-- Must have `AWS CLI` installed
+- Must have `AWS CLI` installed <br>
 -- See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-- Must have `AWS CLI` credentials and run `aws configure`
+- Must have `AWS CLI` credentials and run `aws configure` <br>
 -- See https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config
-- Must have `eksctl` installed
+- Must have `eksctl` installed <br>
 -- See https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
-- Must have `kubectl` installed
+- Must have `kubectl` installed <br>
 -- See https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
-- Must have `helm` installed
+- Must have `helm` installed <br>
 -- See https://docs.aws.amazon.com/eks/latest/userguide/helm.html
-- You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key`
+- You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key` <br>
 -- See https://www.logicmonitor.com/support/settings/users-and-roles/api-tokens/#h-creating-lmv1-tokens
-- You should also clone this Github repo to a local working directory and as long as are working within your local repo's directory, you can run all of the next commands in order
---https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli
+- You should also clone this Github repo to a local working directory and as long as are working within your local repo's directory, you can run all of the next commands in order <br>
+-- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli
 
 # Create the AWS EKS Fargate Kubernetes cluster
 
