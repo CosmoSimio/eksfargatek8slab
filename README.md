@@ -1,5 +1,5 @@
 # Getting Started
-This lab will create a serverless (EC2-less) AWS EKS Kubernetes cluster on Fargate. You will also install the Logicmonitor monitoring applications to collect cluster metrics. You will also migrate to the unified `LM Container` helm chart for monitoring.
+This lab will create a serverless (`EC2`-less) `AWS EKS` Kubernetes cluster on `AWS Fargate`. You will also install the Logicmonitor monitoring applications to collect cluster metrics. You will also migrate to the unified `LM Container` helm chart for monitoring.
 
 ## Requirements
 - Must have the `AWS CLI` installed <br>
@@ -18,20 +18,20 @@ This lab will create a serverless (EC2-less) AWS EKS Kubernetes cluster on Farga
 -- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli <br>
 -- As long as are working within your local repo's directory, you can run all of the commands in this `README` in order.
 
-# Create the AWS EKS Fargate Kubernetes cluster
-
+# Create the `AWS EKS on Fargate` Kubernetes cluster
+This first section assumes that you have completed the initial `Requirements` and that you have a working `AWS CLI` with the adequate permissions for launching the `EKS` cluster.
 ### 1. Launch the cluster config file
 ```
 eksctl create cluster -f eksfargateclusterconfig.yaml
 ```
 
-### 2. By default, Amazon EKS clusters are configured to run `CoreDNS` on Amazon EC2 infrastructure
+### 2. By default, Amazon `EKS` clusters are configured to run `CoreDNS` on Amazon `EC2` infrastructure
 Run the following command to remove the '`eks.amazonaws.com/compute-type : ec2`' annotation from the `CoreDNS` pods:
 ```
 kubectl patch deployment coredns -n kube-system --type json -p='[{"op": "remove", "path": "/spec/template/metadata/annotations/eks.amazonaws.com~1compute-type"}]'
 ```
 
-### 3. Delete and re-create any existing `CoreDNS` pods so that they are scheduled on Fargate. 
+### 3. Delete and re-create any existing `CoreDNS` pods so that they are scheduled on `Fargate`. 
 The following command triggers a rollout of the `CoreDNS` deployment:
 ```
 kubectl rollout restart -n kube-system deployment coredns
@@ -52,7 +52,7 @@ helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
 ```
-### 4. Install `argus`
+### 4. Install the LogicMonitor `argus` cluster monitoring application
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f argus-configuration.yaml argus logicmonitor/argus
 ```
@@ -65,7 +65,7 @@ kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=collectorset-
 ```
 kubectl logs -f $(kubectl get pods --namespace=logicmonitor -l app=argus -o name) -c argus -n logicmonitor
 ```
-# Migrating to unified LM Container helm chart
+# Migrating to unified `LM Container` helm chart
 
 ### 1. Install the `lmc` helm plugin
 ```
