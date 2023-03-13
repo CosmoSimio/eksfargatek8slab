@@ -14,9 +14,9 @@ This lab will create a serverless (`EC2`-less) `AWS EKS` Kubernetes cluster on `
 -- See https://docs.aws.amazon.com/eks/latest/userguide/helm.html
 - You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key` <br>
 -- See https://www.logicmonitor.com/support/settings/users-and-roles/api-tokens/#h-creating-lmv1-tokens
-- You should also clone this Github repo to a local working directory <br>
+- You should also clone this Github repo to a local directory <br>
 -- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli <br>
--- As long as are working within your local repo's directory, you can run all of the commands in this `README` in order.
+-- As long as are working within your local repo directory, you can run all of the commands in this `README` in order.
 
 # Create the `AWS EKS on Fargate` Kubernetes cluster
 This first section assumes that you have completed the initial `Requirements` and that you have a working `AWS CLI` with the adequate permissions for launching the `EKS` cluster.
@@ -47,7 +47,10 @@ kubectl create ns logicmonitor
 ```
 helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
-> <i><b>Note</b>: Before proceeding with steps 3 and 4, you must ensure that you have updated the `collector-controller-configuration.yaml` and `argus-configuration.yaml` with <u>your own</u> LogicMonitor API credentials.</i>
+> <b>Note</b>: Before proceeding with steps 3 and 4, you must ensure that you have updated the `collector-controller-configuration.yaml` and `argus-configuration.yaml` with <u>your own</u> LogicMonitor API credentials.<br>
+You can update each yaml file manually or you can use one of the three scripted methods in the '`cred-inserts`' sub-directory of this repository. <br>
+-- See https://github.com/CosmoSimio/eksfargatek8slab/tree/master/cred-inserts
+
 ### 3. Install the `collectorset-controller`
 ```
 helm upgrade --install --debug --wait --namespace="logicmonitor" -f collectorset-controller-configuration.yaml collectorset-controller logicmonitor/collectorset-controller
