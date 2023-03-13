@@ -11,16 +11,16 @@ You can install the `ruamel.yaml` module using `pip`
 pip install ruamel.yaml
 ```
 ## Bash script method for Linux/macOS
-The `helm-chart-cred-insert.sh` script uses the `yq` command-line tool to update the YAML files based on user input. The `yq` tool is a YAML processor that allows you to read, edit, and write YAML files from the command line. It is available for macOS, Linux, and Windows and can be installed using `pip`.
+The `helm-chart-cred-insert.sh` script uses the `yq` command-line tool to update the YAML files based on user input. The `yq` tool is a YAML processor that allows you to read, edit, and write YAML files from the command line.
 
+You will need to have `yq` installed on your system in order to use this script. You can install `yq` using `pip` by running:
+```
+pip install yq
+```
 The script prompts the user for the `access ID`, `access key`, and `account` information using the read command, and then uses `yq` to update the appropriate fields in the YAML files. The `sed` command is then used to add indentation to the output YAML files, since `yq` does not preserve indentation by default.
 
 Finally, the script uses the `mv` command to overwrite the original YAML files with the updated versions.
 
-Note that you will need to have `yq` installed on your system in order to use this script. You can install `yq` using `pip` by running:
-```
-pip install yq
-```
 ## Powershell script method for Windows
 The `helm-chart-cred-insert.ps1` script uses the `PSYaml` module to read and write YAML files from PowerShell. The `PSYaml` module is available for download from the PowerShell Gallery, and can be installed by running the following command:
 ```
