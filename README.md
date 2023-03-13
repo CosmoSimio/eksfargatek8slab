@@ -76,7 +76,7 @@ helm get values collectorset-controller -n logicmonitor > collectorset-controlle
 helm get values argus -n logicmonitor > argus-configuration.yaml.bkp
 ```
 
-## 4. Migrate the existing `argus` and `collectorset-controller` helm configs
+## 4. Migrate your existing `argus` and `collectorset-controller` helm configs
 ```
 helm lmc config migrate -n logicmonitor
 ```
