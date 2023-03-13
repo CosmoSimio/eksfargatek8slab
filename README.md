@@ -38,14 +38,14 @@ kubectl rollout restart -n kube-system deployment coredns
 ```
 # Install LogicMonitor `Argus` and `Collectorset Controller`
 
-## 1. Import the `logicMonitor` helm repo
-```
-helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
-```
-
-## 2. Create a `logicmonitor` namespace
+## 1. Create a `logicmonitor` namespace
 ```
 kubectl create ns logicmonitor
+```
+
+## 2. Import the `logicMonitor` helm repo
+```
+helm repo add logicmonitor "https://logicmonitor.github.io/k8s-helm-charts"
 ```
 
 ## 3. Install the `collectorset-controller`
