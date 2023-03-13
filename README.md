@@ -13,7 +13,8 @@ This lab will create a serverless (`EC2`-less) `AWS EKS` Kubernetes cluster on `
 - Must have `helm` installed <br>
 -- See https://docs.aws.amazon.com/eks/latest/userguide/helm.html
 - You will also need your LogicMonitor `account` name and an API `Access ID` and `Access Key` <br>
--- See https://www.logicmonitor.com/support/settings/users-and-roles/api-tokens/#h-creating-lmv1-tokens
+-- See https://www.logicmonitor.com/support/settings/users-and-roles/api-tokens/#h-creating-lmv1-tokens <br>
+-- See https://github.com/CosmoSimio/eksfargatek8slab/tree/master/cred-inserts
 - You should also clone this Github repo to a local directory <br>
 -- See https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli <br>
 -- As long as are working within your local repo directory, you can run all of the commands in this `README` in order.
