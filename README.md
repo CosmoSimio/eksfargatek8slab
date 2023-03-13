@@ -82,22 +82,22 @@ helm lmc config migrate -n logicmonitor
 ```
 - This will create and migrate your existing configs in a new file called `lm-container-configuration.yaml` in your `logicmonitor` namespace.
 
-## 3. Delete the old `argus`
+## 5. Delete the old `argus`
 ```
 helm delete argus -n logicmonitor
 ```
 
-## 4. Delete the old `collectorset-controller`
+## 6. Delete the old `collectorset-controller`
 ```
 helm delete collectorset-controller -n logicmonitor
 ```
 
-## 5. Delete the old `collectorset-controller` `Custom Resource Definition (CRD)`
+## 7. Delete the old `collectorset-controller` `Custom Resource Definition (CRD)`
 ```
 kubectl delete crd collectorsets.logicmonitor.com
 ```
 
-## 6. Delete the client-cached `ConfigMaps`
+## 8. Delete the client-cached `ConfigMaps`
 ```
 kubectl delete configmaps -l argus=cache
 ```
