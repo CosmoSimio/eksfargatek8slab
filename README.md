@@ -117,4 +117,4 @@ helm repo update
 helm upgrade --install --debug --wait --namespace="logicmonitor" --create-namespace -f ./lm-container-configuration.yaml lm-container --version "3" logicmonitor/lm-container
 ```
 - The above command is using the `LM Container` chart `--version "3"` as this is the latest chart version as of the writing of this `README`.
-- Check `https://github.com/logicmonitor/helm-charts/tree/main/charts/lm-container` for latest version.
+- Check https://github.com/logicmonitor/helm-charts/tree/main/charts/lm-container for latest version.
