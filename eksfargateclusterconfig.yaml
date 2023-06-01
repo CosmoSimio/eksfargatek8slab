@@ -4,6 +4,9 @@ kind: ClusterConfig
 metadata:
   name: yourname-eks-fargate-k8s
   region: us-east-2
+  cloudWatch:
+    clusterLogging:
+      enableTypes: ["*"]
 
 availabilityZones: ["us-east-2a", "us-east-2b"]
 
